@@ -8,7 +8,7 @@ const server = http.Server(app);
 
 const io = socketio(server);
 
-const messageData = fs.readFileSync(`${__dirname}/db.json`).toString();
+const messageData = fs.readFileSync(`${__dirname}/server/db.json`).toString();
 const messages = messageData? JSON.parse(messageData) : [];
 
 io.on('connection',(socket)=>{
@@ -18,7 +18,7 @@ io.on('connection',(socket)=>{
    socket.on('new_message',(message) => {
        messages.unshift(message);
        socket.broadcast.emit('new_message',message);
-       fs.writeFileSync(`${__dirname}/db.json`,JSON.stringify(messages));
+       fs.writeFileSync(`${__dirname}/server/db.json`,JSON.stringify(messages));
    })
 })
 
