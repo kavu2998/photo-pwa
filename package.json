@@ -4,7 +4,7 @@
   "description": "photo caption app",
   "main": "server/",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node index.js",
     "build": "node sw_build.js"
   },
   "author": "",
