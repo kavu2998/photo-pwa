@@ -5,7 +5,8 @@
   "main": "server/",
   "scripts": {
     "start": "node server/",
-    "build": "node sw_build.js"
+    "build": "node sw_build.js",
+    "build-app": "react-scripts build",
   },
   "author": "",
   "license": "ISC",
